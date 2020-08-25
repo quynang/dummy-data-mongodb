@@ -3,6 +3,5 @@
 ```
 > cd dummy-data-mongodb
 
-> find *.json -exec mongoimport -d symfony -c {}  ./{} \;
-
+> find *.json -exec bash -c 'name="{}"; mongoimport -d symfony -c ${name%.*}  ./{}' \;
 ```
